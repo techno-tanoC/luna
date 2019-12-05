@@ -5,7 +5,8 @@ defmodule LunaWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", LunaWeb do
+  scope "/", LunaWeb do
     pipe_through :api
+    post "/", HomeController, :index
   end
 end
