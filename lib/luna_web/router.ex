@@ -7,5 +7,6 @@ defmodule LunaWeb.Router do
 
   scope "/api", LunaWeb do
     pipe_through :api
+    get "/weather", WeatherController, :index
   end
 end
