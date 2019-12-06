@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: docker/app/Dockerfile
+      args:
+        BASE_REPO: ${BASE_REPO}
+        BASE_TAG: ${BASE_TAG}
+    image: ${REPO}:${TAG}
+
+  base:
+    build:
+      context: ../
+      dockerfile: docker/app/Dockerfile.base
+    image: ${BASE_REPO}:${BASE_TAG}
