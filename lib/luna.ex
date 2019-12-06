@@ -19,10 +19,19 @@ defmodule Luna do
     end
   end
 
+  def index(%{"text" => "error" <> _}) do
+    error_template("エラー見たいの！？ｗ")
+  end
+
   def error_template(message) do
-    Luna.Block.image(
-      "https://dcdn.cdn.nimg.jp/niconews/articles/images/3255156/73f10412bdae89d4e106ab8e2bb86c9bbcaffa377ebb9ac97d05302de85de031de6261927272a6de54c6b779c5c1785f8f7b996f985a9f2322aa280908e15195",
-      message
-    )
+    url =
+      "https://dcdn.cdn.nimg.jp/niconews/articles/images/3255156/73f10412bdae89d4e106ab8e2bb86c9bbcaffa377ebb9ac97d05302de85de031de6261927272a6de54c6b779c5c1785f8f7b996f985a9f2322aa280908e15195"
+
+    %{
+      blocks: [
+        Luna.Block.plain_text_selction(message),
+        Luna.Block.image(url, "take")
+      ]
+    }
   end
 end
