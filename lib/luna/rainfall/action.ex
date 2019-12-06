@@ -18,7 +18,7 @@ defmodule Luna.Rainfall.Action do
         {:ok, datetime}
 
       {:error, _} ->
-        {:error, "時間の取得に失敗しちゃった！ヘケッ"}
+        {:error, "時間の取得に失敗しちゃった！ｗ"}
     end
   end
 
