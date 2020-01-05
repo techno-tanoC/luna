@@ -21,4 +21,4 @@ COPY --from=builder /app/_build/prod/rel/luna ./
 RUN chown -R nobody: /app
 USER nobody
 
-CMD ["bin/luna", "start]
+CMD ["bin/luna", "start"]
